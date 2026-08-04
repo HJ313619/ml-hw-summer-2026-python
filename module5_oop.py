@@ -11,9 +11,9 @@ The basic functionality of data processing (data initialization, data insertion,
 """
 
 class NumberCollection:
-  def __initialize__(self):
+  def __init__(self):
     # Data initialization
-    self.numbers[]
+    self.numbers = []
 
   def insert(self, value):
     # Data insertion
@@ -21,18 +21,18 @@ class NumberCollection:
 
   def search(self, value):
     # Data search. Returns index of the first occurrence of "value" or -1 if not found.
-    for index, number in enumerate(self,numbers):
+    for index, number in enumerate(self.numbers):
       if number == value:
         return index + 1
-      return -1
+    return -1
 
 def main():
-  N = int(input("Enter a positive integer N: "))
+  N = int(input("Enter a positive integer N for how many input numbers: "))
 
   collection = NumberCollection()
 
   for i in range(N):
-    value = int(input(f"Enter number {i + 1}"))
+    value = int(input(f"Enter number {i + 1}: "))
     collection.insert(value)
 
   X = int(input("Enter X to search for "))
