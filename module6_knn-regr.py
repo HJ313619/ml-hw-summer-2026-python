@@ -47,7 +47,7 @@ class kNNRegressor:
 
 def main():
   try:
-    N = int(input("Enter N number of training points: ")):
+    N = int(input("Enter N number of training points: "))
     if N <= 0:
       print("Error: N must be a positive integer.")
       return
@@ -59,7 +59,7 @@ def main():
 
     model = kNNRegressor(N)
     print(f"Please enter {N} (x, y) points. One at a time: ")
-    for i in range N:
+    for i in range(N):
       x_val = float(input(f"Enter point {i+1} - x value: "))
       y_val = float(input(f"Enter point {i+1} - y value: "))
       model.insert(x_val, y_val)
@@ -67,7 +67,7 @@ def main():
     x_query = float(input("Enter value X to predict value Y for: "))
 
     if k <= N:
-      y_predict = predict(x_query, k)
+      y_predict = model.predict(x_query, k)
       print(f"Result Y of {k}-NN Regression is: {y_predict}")
     else:
       print("Error: k cannot be greater than N.")
