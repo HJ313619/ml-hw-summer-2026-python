@@ -17,12 +17,28 @@ The basic functionality of data processing (data initialization, data insertion)
 import numpy as np
 from sklearn.neighbors import KNeighborsRegressor
 
+def read_positive_integer(prompt):
+  # Keep asking the user until they enter a valid positive integer.
+  while True:
+    raw_value = input(prompt)
+    try:
+      value = int(raw_value)
+    except ValueError:
+      print("Invalid input: please enter an integer.")
+      continue
+
+    if value <= 0:
+      print("Invalid input: please enter a positive integer.")
+      continue
+
+    return value
+
 def main():
   # Read N (number of points)
-  N = int(input("Enter a positive integer N (number of points): "))
+  N = read_positive_integer("Enter a positive integer N (number of points): ")
 
   # Read k (number of neighbors)
-  k = int(input("Enter a positive integer k (number of neighbors: )"))
+  k = read_positive_integer("Enter a positive integer k (number of neighbors): ")
 
   # Initialize numpy arrays
   X_data = np.zeros(N, dtype = float)
@@ -58,5 +74,5 @@ def main():
   else:
     print("Error: k cannot be greater than N.")
 
-if __name__= "__Main__":
+if __name__== "__main__":
   main()
