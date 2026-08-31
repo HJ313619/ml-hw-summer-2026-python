@@ -42,7 +42,7 @@ def main():
   y_values = np.empty(N, dtype = int) # predicted labels
 
   for i in range(N):
-    print(f"\nPoint {i+1}/{N}: ")
+    print(f"\nPoint {i+1} of {N}: ")
     x_val = get_binary_value("Enter x (ground truth label, 0 or 1): ")
     y_val = get_binary_value("Enter y (predicted label, 0 or 1): ")
     
@@ -56,5 +56,5 @@ def main():
   print(f"Precision: {precision:.2f}")
   print(f"Recall: {recall:.2f}")
 
-if __name__ = "__main__":
+if __name__ == "__main__":
   main()
